@@ -27,3 +27,5 @@ Route::get('/posts', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('home/post', [PostController::class,'view']);
 Route::post('/post', [PostController::class,'submit']);
 Route::get('post/{id?}', [PostController::class,'detail']);
+Route::post('/comment', [PostController::class,'comment']);
+Route::get('/logout', [PostController::class,'logout']);
