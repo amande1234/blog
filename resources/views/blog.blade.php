@@ -23,18 +23,68 @@
             </li>
            
             
-          </ul>
+          </ul> b
           <form class="form-inline my-2 my-lg-0">
           <a href="/logout">Logout</a>
           </form>
         </div>
       </nav>
+
+      <form action="/post/filter" method="post">
 <div id="main-content" class="blog-page">
+
+      <div class="container filter-container ">
+
+        <h3 class="section-heading">Filter Posts</h3>
+      
+        <div class="row">
+
+            <div class="col-md-4">
+
+
+                <select class="form-control" name="post_type">
+                <option value="entertainment">Entertainment</option>
+  <option value="news">News</option>
+  <option value="sports">Sports</option>
+  <option value="tech">Tech</option>
+                </select>
+
+
+            </div>
+
+            <div class="col-md-4">
+
+               <select class="form-control" name="post_status" >
+                    <option value="0">Draft</option>
+                    <option value="1">Publish</option>
+                </select>
+
+            
+          </div>
+
+          <div class="col-md-4">
+
+                <button class="btn btn-lg btn-primary btn-custom">Filter</button>
+
+
+            </div>
+
+          <div class="col-md-4">
+
+            
+          </div>
+        </div>
+      </div>
+      <hr/>
    
         <div class="container">
 
         
             <div class="row clearfix">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            </form>
+
+            
 
             <!-- Single Post Div -->
             @foreach ($posts_list as $key=> $value)

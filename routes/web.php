@@ -29,3 +29,5 @@ Route::post('/post', [PostController::class,'submit']);
 Route::get('post/{id?}', [PostController::class,'detail']);
 Route::post('/comment', [PostController::class,'comment']);
 Route::get('/logout', [PostController::class,'logout']);
+Route::get('/post/delete/{id?}', [PostController::class,'delete']);
+Route::post('/post/filter', [PostController::class,'filter']);

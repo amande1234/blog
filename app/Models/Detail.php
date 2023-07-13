@@ -9,7 +9,10 @@ class Detail extends Model
 {
     use HasFactory;
     protected $table='detail';
-    protected $fillable=['status','tag','type'];
+    protected $fillable=['post_status','tag','post_type'];
     protected $guarded=['image'];
 
+    public function post(){
+        return $this->belongsTo(\App\Models\Post::class,'post_id','id');
+    }
 }
